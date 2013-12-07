@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon"   href="">
+
+		<title>BARISTA</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="../css/bootstrap.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<style type="text/css">
+			body {
+				background: #000000;
+				padding-top: 30px;
+			}
+			.navbar {
+				background-color: #999999;
+				border-color: #000000;
+			}
+			.jumbotron {
+				background-color: #999999
+			}
+		</style>
+
+	</head>
+
+	<body onload="checkCookie();" >
+
+		<div class="container">
+			<div class="header">
+				<nav class="navbar navbar-default nav-tabs-justified col-md-12" role="navigation">
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div align="center" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul id="topo" class="nav navbar-nav navbar-btn">
+							<li class="active">
+								<a onclick='menuMenu()'>Menu</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right col-md-2">
+							
+							<li class="btn-danger navbar-btn col-md-12">
+								<a href="../index.html">Sair</a>
+							</li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</nav>
+			</div>
+
+			<div class="row row-offcanvas row-offcanvas-right">
+
+				<div class="col-xs-9 col-sm-9 col-md-9">
+					<p class="pull-right visible-xs">
+						<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">
+							Algo correu mal...
+						</button>
+					</p>
+					<div id="jumbo" class="jumbotron" >
+						<div align="center"  class="list-group">
+							<a onclick="menuConsumo()" class="list-group-item">Consumir</a>
+							<a onclick="menuMapa()" class="list-group-item">Lugares</a>
+							<a onclick="menuMusica()" class="list-group-item">Música</a>
+							<a onclick="menuUser()" class="list-group-item">Histórico do consumo</a>
+						</div>
+					</div>
+				</div><!--/span-->
+
+				<div class="col-xs-3 col-sm-3 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
+					<button onmousedown="toggleBotao()" type="button" class="btn collapse in btn-md" id="botaoNOTBAR" >
+						checker nao funca
+					</button>
+					<div class="list-group collapse" id="esconde">
+						<a href="#" id="mplayer" class="list-group-item hide"><img src="../img/glyphicons_017_music.png"> tocar: <i>Musica0</i><button onclick="ativaMplayer()" type="button" class="close" aria-hidden="true">&times;</button></a>
+						<a href="#" id="bebida" class="list-group-item hide">2x Imperiais</a>
+						<a href="#" id="fila" class="list-group-item hide">2x pessoas à frente
+						<br />
+						para: <i>bilhar</i></a>
+					</div>
+				</div><!--/span-->
+			</div><!--/row-->
+
+		</div><!--/.container-->
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- "borrowed" script
+		================================================== -->
+		<!-- own script
+		================================================== -->
+		<script src="../js/fetchCode.js"></script>
+
+		<script src="../js/backupCode.js"></script>
+		
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="../js/jquery-1.js"></script>
+		<script src="../js/bootstrap.js"></script>
+		<script src="../css/offcanvas.css"></script>
+
+	</body>
+</html>
