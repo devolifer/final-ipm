@@ -25,33 +25,24 @@
 				border-color: #000000;
 			}
 			.jumbotron {
-				background-color: #999999
+				background-color: #999999;
 			}
 		</style>
 
 	</head>
 
-	<body onload="checkCookie();" >
+	<body >
 
-		<div class="container">
-			<div class="header">
-				<nav class="navbar navbar-default nav-tabs-justified col-md-12" role="navigation">
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div align="center" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul id="topo" class="nav navbar-nav navbar-btn">
-							<li class="active">
-								<a onclick='menuMenu()'>Menu</a>
-							</li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right col-md-2">
-							
-							<li class="btn-danger navbar-btn col-md-12">
-								<a href="../index.html">Sair</a>
-							</li>
-						</ul>
-					</div><!-- /.navbar-collapse -->
-				</nav>
-			</div>
+		<div align="center" class="container">
+			<nav style="color:#990000;" class="navbar navbar-default nav-tabs-justified col-md-12" role="navigation">
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<ul id="topo" class="nav navbar-nav navbar-btn">
+					<li class="active">
+						<a style="border-style:groove" onclick='menuMenu()'>Menu</a>
+					</li>
+				</ul>
+				<a class="nav navbar-nav navbar-right col-md-2 btn-danger navbar-btn btn-lg" style="border-style:groove; text-decoration: none;" href="../index.html">Sair</a>
+			</nav>
 
 			<div class="row row-offcanvas row-offcanvas-right">
 
@@ -73,10 +64,13 @@
 
 				<div class="col-xs-3 col-sm-3 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
 					<button onmousedown="toggleBotao()" type="button" class="btn collapse in btn-md" id="botaoNOTBAR" >
-						checker nao funca
+						»» mostrar notificações »»
 					</button>
 					<div class="list-group collapse" id="esconde">
-						<a href="#" id="mplayer" class="list-group-item hide"><img src="../img/glyphicons_017_music.png"> tocar: <i>Musica0</i><button onclick="ativaMplayer()" type="button" class="close" aria-hidden="true">&times;</button></a>
+						<a href="#" id="mplayer" class="list-group-item hide"><img src="../img/glyphicons_017_music.png"> Está a tocar: <i>Musica0</i>
+						<button onclick="ativaMplayer()" type="button" class="close" aria-hidden="true">
+							&times;
+						</button></a>
 						<a href="#" id="bebida" class="list-group-item hide">2x Imperiais</a>
 						<a href="#" id="fila" class="list-group-item hide">2x pessoas à frente
 						<br />
@@ -96,7 +90,7 @@
 		<script src="../js/fetchCode.js"></script>
 
 		<script src="../js/backupCode.js"></script>
-		
+
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="../js/jquery-1.js"></script>
 		<script src="../js/bootstrap.js"></script>

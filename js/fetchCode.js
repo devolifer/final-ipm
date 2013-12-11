@@ -1,5 +1,5 @@
 function alteraTopo(str) {
-	var result = "<li class='active'><a onclick='menuMenu()'>Menu";
+	var result = "<li class='active'><a style='border-style:ridge' onclick='menuMenu()'>Menu";
 	if (str) {
 		result += str;
 		document.getElementById('topo').innerHTML = result;
@@ -33,7 +33,7 @@ function atualizaCBO() {
 
 
 function menuCompraHamburguer() {
-	var Ctopo = "</a></li><li class='active'><a onclick='menuConsumo()'>Consumo</a></li><li class='active'><a>Hamburguer</a></li>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:ridge' onclick='menuConsumo()'>Consumo</a></li><li class='active'><a style='border-style:groove'>Hamburguer</a></li>";
 
 	var txt = " ";
 	var aux = "class";
@@ -80,7 +80,7 @@ function atualizaSandes_bifana() {
 
 
 function menuCompraSandes() {
-	var Ctopo = "</a></li><li class='active'><a onclick='menuConsumo()'>Consumo</a></li><li class='active'><a>Sandes</a></li>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:ridge' onclick='menuConsumo()'>Consumo</a></li><li class='active'><a style='border-style:groove'>Sandes</a></li>";
 
 	var txt = " ";
 	var aux = "class";
@@ -115,7 +115,7 @@ function atualizaPipocas() {
 	document.getElementById("btnCompra").setAttribute("onclick", "addCompra('Pipocas', '1.00')");
 }
 function menuCompraPipocas() {
-	var Ctopo = "</a></li><li class='active'><a onclick='menuConsumo()'>Consumo</a></li><li class='active'><a>Pipocas</a></li>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:ridge' onclick='menuConsumo()'>Consumo</a></li><li class='active'><a style='border-style:groove'>Pipocas</a></li>";
 
 	var txt = " ";
 	var aux = "class";
@@ -161,7 +161,7 @@ function atualizaSagres20cl() {
 }
 
 function menuCompraCerveja() {
-	var Ctopo = "</a></li><li class='active'><a onclick='menuConsumo()'>Consumo</a></li><li class='active'><a>Cerveja</a></li>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:ridge' onclick='menuConsumo()'>Consumo</a></li><li class='active'><a style='border-style:groove'>Cerveja</a></li>";
 
 	var txt = " ";
 	var aux = "class";
@@ -199,7 +199,7 @@ function atualizaFrize() {
 	document.getElementById("btnCompra").setAttribute("onclick", "addCompra('Frize', '1.80')");
 }
 function menuCompraAgua() {
-	var Ctopo = "</a></li><li class='active'><a onclick='menuConsumo()'>Consumo</a></li><li class='active'><a>Água</a></li>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:ridge' onclick='menuConsumo()'>Consumo</a></li><li class='active'><a style='border-style:groove'>Água</a></li>";
 
 	var txt = " ";
 	var aux = "class";
@@ -248,7 +248,7 @@ function atualizaShotvodka() {
 	document.getElementById("btnCompra").setAttribute("onclick", "addCompra('Shot de vodka', '1.00')");
 }
 function menuCompraShots() {
-	var Ctopo = "</a></li><li class='active'><a onclick='menuConsumo()'>Consumo</a></li><li class='active'><a>Shots</a></li>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:ridge' onclick='menuConsumo()'>Consumo</a></li><li class='active'><a style='border-style:groove'>Shots</a></li>";
 
 	var txt = " ";
 	var aux = "class";
@@ -289,8 +289,8 @@ var coisasComida = ["Hamburguer", "Sandes", "Pipocas"];
 var coisasBebida = ["Cerveja", "Agua", "Shots"];
 
 function menuConsumo() {
-	var Ctopo = "</a></li><li class='active'><a>Consumo</a></li>";
-	var txt = "<div class='panel-group' id='accordion'><div class='panel panel-default'><a data-toggle='collapse' data-parent='#accordion' href='#collapseOne'><div class='panel-heading'>	<h4 align='center' class='panel-title'> Comida </h4></div> </a><div align='center' id='collapseOne' class='panel-collapse collapse'>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:groove'>Consumo</a></li>";
+	var txt = "<div class='panel-group' id='accordion'><div class='panel panel-default'><a style='text-decoration: none' data-toggle='collapse' data-parent='#accordion' href='#collapseOne'><div class='panel-heading'>	<h4 align='center' class='panel-title'> Comida </h4></div> </a><div align='center' id='collapseOne' class='panel-collapse collapse'>";
 	quantidade = 1;
 	alteraTopo(Ctopo);
 
@@ -305,7 +305,7 @@ function menuConsumo() {
 	}
 	txt += "</div></div>";
 
-	txt += "<div class='panel panel-default'><a data-toggle='collapse' data-parent='#accordion' href='#collapseTwo'><div class='panel-heading'>	<h4 align='center' class='panel-title'> Bebidas </h4></div> </a><div align='center' id='collapseTwo' class='panel-collapse collapse'>"
+	txt += "<div class='panel panel-default'><a style='text-decoration: none' data-toggle='collapse' data-parent='#accordion' href='#collapseTwo'><div class='panel-heading'>	<h4 align='center' class='panel-title'> Bebidas </h4></div> </a><div align='center' id='collapseTwo' class='panel-collapse collapse'>"
 
 	for (var i = 0; i < coisasBebida.length; i++) {
 		txt += "<a onclick='menuCompra";
@@ -319,44 +319,18 @@ function menuConsumo() {
 	alteraJumbo(txt);
 }
 
-///////
-var listaMusica = ["Tony Carreira", "Música Pimba", "Hotel California"];
-function menuMusica() {
-	var Ctopo = "</a></li><li class='active'><a>Música</a></li>";
-	alteraTopo(Ctopo);
-	var MPcookie = readCookie('MUSICstatus');
 
-	var txt = "<div class='row'><div align='center' class='thumbnail col-sm-8'><img src='../img/dj-hero.jpg' alt='imagem fugiu'>Dj viraDiscos";
-	txt += "<button onclick='ativaMplayer()' type='button' class='btn col-sm-12 btn-lg btn-primary' id='togglerMP'>Acompanhar a música</button></div><div align='center' style='font-size: 10px;' class='list-group panel nav col-sm-3 col-sm-offset-1'>Lista de músicas:";
 
-	for (var i = 0; i < listaMusica.length; i++) {
-		txt += "<a class='list-group-item panel'><img align='left' src='../img/glyphicons_017_music.png'/>";
-		txt += listaMusica[i];
-		txt += "</a>";
-	}
 
-	txt += "</div></div>";
-	alteraJumbo(txt);
-	
-	if (MPcookie != null && MPcookie != "" && MPcookie == 'off') {
-		document.getElementById("togglerMP").setAttribute("class", "btn col-sm-12 btn-lg btn-primary");
-		document.getElementById("togglerMP").innerHTML = "Acompanhar a música";
-	} else if (MPcookie != null && MPcookie != "" && MPcookie == 'on') {
-		document.getElementById("togglerMP").setAttribute("class", "btn col-sm-12 btn-lg btn-info");
-		document.getElementById("togglerMP").innerHTML = "Deixar de acompanhar a música";
-	} else {
-		
-	}
-	
 
-}
+
 
 ///////
 
 var coisasMapas = ["Bilhar", "Wc", "Space_invaders", "Bar", "Checkout"];
 
 function menuMapa() {
-	var Ctopo = "</a></li><li class='active'><a>Cantos do Bar</a></li>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:groove'>Cantos do Bar</a></li>";
 	alteraTopo(Ctopo);
 	var txt = "<div class='row'>";
 
@@ -378,11 +352,14 @@ function menuMapa() {
 var listaUsersBilhar = ["Zé", "<i>Anónimo</i>", "João", "<i>Anónimo</i>", "<i>Anónimo</i>"];
 
 function menuMapaBilhar() {
-	var Ctopo = "</a></li><li class='active'><a onclick='menuMapa()'>Cantos do Bar</a></li><li class='active'><a>Bilhar</a></li>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:ridge' onclick='menuMapa()'>Cantos do Bar</a></li><li class='active'><a style='border-style:groove'>Bilhar</a></li>";
 	alteraTopo(Ctopo);
 
 	var txt = "<div class='row'><div class='thumbnail col-sm-8'><img src='../img/bilhar.jpg' alt='imagem fugiu'><img src='../img/maps.jpg' alt='imagem fugiu'>";
-	txt += "<button onclick='ativaFila()' type='button' class='btn col-sm-12 btn-lg' id='togglerROW'>entrar na fila de espera</button></div><div align='center' style='font-size: 10px;' class='list-group panel nav col-sm-3 col-sm-offset-1'>Pessoas à frente:";
+	if (listaUsersBilhar.length > 5)
+		txt += "<button onclick='ativaFilaBilhar()' type='button' class='btn col-sm-12 btn-lg btn-info' id='togglerROW'>sair da fila de espera</button>";
+	else txt += "<button onclick='ativaFilaBilhar()' type='button' class='btn col-sm-12 btn-lg' id='togglerROW'>entrar na fila de espera</button>";
+	txt += "</div><div align='center' style='font-size: 10px;' class='list-group panel nav col-sm-3 col-sm-offset-1'>Pessoas à frente:";
 
 	for (var i = 0; i < listaUsersBilhar.length; i++) {
 		txt += "<a class='list-group-item panel'><img src='../img/glyphicons_003_user.png'/>";
@@ -393,9 +370,17 @@ function menuMapaBilhar() {
 	txt += "</div></div>";
 	alteraJumbo(txt);
 }
+
+function ativaFilaBilhar() {
+	if (listaUsersBilhar.length > 5)
+		listaUsersBilhar.pop();
+	else listaUsersBilhar[listaUsersBilhar.length] = "Eu";
+	
+	menuMapaBilhar();
+}
 ///////
 function menuMapaWc() {
-	var Ctopo = "</a></li><li class='active'><a onclick='menuMapa()'>Cantos do Bar</a></li><li class='active'><a>Casas de banho</a></li>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:ridge' onclick='menuMapa()'>Cantos do Bar</a></li><li class='active'><a style='border-style:groove'>Casas de banho</a></li>";
 	alteraTopo(Ctopo);
 
 	var txt = "<div class='row'><div class='thumbnail col-sm-12'><img src='../img/toilets.png' alt='imagem fugiu'><img src='../img/maps.jpg' alt='imagem fugiu'>";
@@ -404,28 +389,38 @@ function menuMapaWc() {
 }
 ///////
 
-
+var listaUsersSI = ["<i>Anónimo</i>", "Maria", "<i>Anónimo</i>"];
 function menuMapaSpace_invaders() {
-	var Ctopo = "</a></li><li class='active'><a onclick='menuMapa()'>Cantos do Bar</a></li><li class='active'><a>Space Invaders</a></li>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:ridge' onclick='menuMapa()'>Cantos do Bar</a></li><li class='active'><a style='border-style:groove'>Space Invaders</a></li>";
 	alteraTopo(Ctopo);
 
 	var txt = "<div class='row'><div class='thumbnail col-sm-8'><img src='../img/spaceinvaders.jpg' alt='imagem fugiu'><img src='../img/maps.jpg' alt='imagem fugiu'>";
-	txt += "<button onclick='ativaFila()' type='button' class='btn col-sm-12 btn-lg' id='togglerROW'>entrar na fila de espera</button></div><div align='center' style='font-size: 10px;' class='list-group panel nav col-sm-3 col-sm-offset-1'>Pessoas à frente:";
-	var listaUsers = ["<i>Anónimo</i>", "Maria", "<i>Anónimo</i>"];
-	for (var i = 0; i < listaUsers.length; i++) {
+	if (listaUsersSI.length > 3)
+		txt += "<button onclick='ativaFilaSI()' type='button' class='btn col-sm-12 btn-lg btn-info' id='togglerROW'>sair da fila de espera</button>";
+	else txt +=	"<button onclick='ativaFilaSI()' type='button' class='btn col-sm-12 btn-lg' id='togglerROW'>entrar na fila de espera</button>";
+	txt += "</div><div align='center' style='font-size: 10px;' class='list-group panel nav col-sm-3 col-sm-offset-1'>Pessoas à frente:";
+	
+	for (var i = 0; i < listaUsersSI.length; i++) {
 		txt += "<a class='list-group-item panel'><img src='../img/glyphicons_003_user.png'/>";
-		txt += listaUsers[i];
+		txt += listaUsersSI[i];
 		txt += "</a>";
 	}
 
 	txt += "</div></div>";
 	alteraJumbo(txt);
 }
+
+function ativaFilaSI() {
+	if (listaUsersSI.length > 3)
+		listaUsersSI.pop();
+	else listaUsersSI[listaUsersSI.length] = "Eu";
+	menuMapaSpace_invaders();
+}
 ///////
 
 
 function menuMapaBar() {
-	var Ctopo = "</a></li><li class='active'><a onclick='menuMapa()'>Cantos do Bar</a></li><li class='active'><a>Balcão do bar</a></li>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:ridge' onclick='menuMapa()'>Cantos do Bar</a></li><li class='active'><a style='border-style:groove'>Balcão do bar</a></li>";
 	alteraTopo(Ctopo);
 
 	var txt = "<div class='row'><div class='thumbnail col-sm-12'><img src='../img/balcony.jpg' alt='imagem fugiu'><img src='../img/maps.jpg' alt='imagem fugiu'>";
@@ -435,7 +430,7 @@ function menuMapaBar() {
 }
 
 function menuMapaCheckout() {
-	var Ctopo = "</a></li><li class='active'><a onclick='menuMapa()'>Cantos do Bar</a></li><li class='active'><a>Saída e pagamento</a></li>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:ridge' onclick='menuMapa()'>Cantos do Bar</a></li><li class='active'><a style='border-style:groove'>Saída e pagamento</a></li>";
 	alteraTopo(Ctopo);
 
 	var txt = "<div class='row'><div class='thumbnail col-sm-12'><img src='../img/checkout.jpg' alt='imagem fugiu'><img src='../img/maps.jpg' alt='imagem fugiu'>";
@@ -499,11 +494,24 @@ function addCompra(nome, price) {
 //////////
 
 function addSB(str){
+	var auxID = shopCart.length;
 	var entrada = document.createElement("a");
 	entrada.setAttribute("class", "list-group-item");
+	entrada.setAttribute("id", auxID);
 	var t = document.createTextNode(str);
+	var closeBtn = document.createElement("button");
+	var aux = "document.getElementById('";
+	aux += auxID;
+	aux += "').setAttribute('class','hide')"
+	closeBtn.setAttribute("onclick", aux);
+	closeBtn.setAttribute("type", "button");
+	closeBtn.setAttribute("class", "close");
+	closeBtn.setAttribute("aria-hidden", "true");
+	var t2 = document.createTextNode("x");
+	closeBtn.appendChild(t2);
 	
 	entrada.appendChild(t);
+	entrada.appendChild(closeBtn);
 	document.getElementById("esconde").appendChild(entrada);
 	
 		
@@ -512,7 +520,7 @@ function addSB(str){
 
 
 function menuUser() {
-	var Ctopo = "</a></li><li class='active'><a>Histórico de Consumo</a></li>";
+	var Ctopo = "</a></li><li class='active'><a style='border-style:groove'>Histórico de Consumo</a></li>";
 	alteraTopo(Ctopo);
 
 	var txt = "<div class='row panel'><div align='center' class='panel-heading col-md-3'>Quantidade</div><div align='center' class='panel-heading col-md-3'>Designação</div><div align='center' class='panel-heading col-md-3'>Estado Actual</div><div align='center' class='panel-heading col-md-3'>Custo</div></div><div class='row panel' style='max-height: 300px; overflow-y: scroll;'>";
@@ -545,8 +553,9 @@ function menuUser() {
 
 ///////
 function menuMenu() {
-	var Ctopo = "</a></li>";
-	alteraTopo(Ctopo);
+	var Ctopo = "<li class='active'><a style='border-style:groove' onclick='menuMenu()'>Menu</a></li>";
+	document.getElementById('topo').innerHTML = Ctopo;
+	
 	var txt = "<div align='center'  class='list-group'><a onclick='menuConsumo()' class='list-group-item'>Consumir</a>";
 	txt += "<a onclick='menuMapa()' class='list-group-item'>Lugares</a><a onclick='menuMusica()' class='list-group-item'>Música</a>";
 	txt += "<a onclick='menuUser()'' class='list-group-item'>Histórico do consumo</a></div>";
