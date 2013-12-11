@@ -443,7 +443,7 @@ function menuMapaCheckout() {
 ///////
 var shopCart = new Array();
 //
-shopCart[0] = new Array("1", "easter", "entrada", "0.00");
+shopCart[0] = new Array("1", "easter_egg", "entrada", "0.00");
 
 
 /////////codigo para comprar as cenas, shopcart
@@ -479,14 +479,20 @@ function addCompra(nome, price) {
 	txt += " custo: ";
 	txt += price;
 	txt += "€";
-	if (confirm(txt))
-		shopCart[shopCart.length] = new Array(quantidade, nome, "pedido a ser preparado", price); 
 	
 	var notify = quantidade;
 	notify += " ";
 	notify += nome;
 	notify += " a ser preparado";
-	addSB(notify);
+	
+	
+	if (confirm(txt)) {
+		addSB(notify);
+		shopCart[shopCart.length] = new Array(quantidade, nome, "pedido a ser preparado", price);
+	}
+		 
+	
+	
 }
 
 
@@ -518,7 +524,6 @@ function addSB(str){
 }
 
 
-
 function menuUser() {
 	var Ctopo = "</a></li><li class='active'><a style='border-style:groove'>Histórico de Consumo</a></li>";
 	alteraTopo(Ctopo);
@@ -541,14 +546,178 @@ function menuUser() {
 		txt += "€</div>";
 	}
 	txt += "</div>"
-	txt += "<div class='row panel'><div align='center' class='col-md-3 panel-left'>Custo Total:</div>";
+	txt += "<div class='row panel'><div style='font-size:15px;' align='center' class='col-md-3 panel-left'>Custo Total:</div>";
 	txt += "<div align='left' class='col-md-3 panel'>";
 	result = result.toFixed(2);
 	txt += result;
-	txt += "€</div></div>";
+	txt += "€</div>";
+	
+	txt += "<div style='font-size:15px;' align='center' class='col-md-3 panel'>Limite de consumo:</div>";
+	txt += "<div onclick='toggleNumber()' align='center' class='col-md-3 panel-right'>";
+	txt += "<a id='limitor'  onclick='toggleNumber()'>";
+	if (numpadValue == 0)
+		txt += "-,--";
+	else txt += numpadValue;
+	
+	txt += "</a>";
+	txt += "€</div>";
+	txt += "<div align='left' id='numpad' class='col-md-3 panel-right collapse'>";
+	//aqui vou fazer uma sub interface de numpad
+	
+	txt += "<button onclick='insUM()' type='button' class='col-md-4 btn-sm'>1</button>";
+	txt += "<button onclick='insDOIS()' type='button' class='col-md-4 btn-sm'>2</button>";
+	txt += "<button onclick='insTRES()' type='button' class='col-md-4 btn-sm'>3</button>";
+	txt += "<button onclick='insQUAT()' type='button' class='col-md-4 btn-sm'>4</button>";
+	txt += "<button onclick='insCINC()' type='button' class='col-md-4 btn-sm'>5</button>";
+	txt += "<button onclick='insSEIS()' type='button' class='col-md-4 btn-sm'>6</button>";
+	txt += "<button onclick='insSETE()' type='button' class='col-md-4 btn-sm'>7</button>";
+	txt += "<button onclick='insOITO()' type='button' class='col-md-4 btn-sm'>8</button>";
+	txt += "<button onclick='insNOVE()' type='button' class='col-md-4 btn-sm'>9</button>";
+	txt += "<button onclick='insLIPA()' type='button' class='col-md-4 btn-sm'>C</button>";
+	txt += "<button onclick='insZERO()' type='button' class='col-md-4 btn-sm'>0</button>";
+	txt += "<button onclick='insBACK()' type='button' class='col-md-4 btn-sm'><-</button>";
+	
+	txt += "</div></div>";
 	txt += "</div>"
-	//txt += "<div class='row panel'><p>Total:</p>"  //TODO: devolvel o total, que vai ser uma var global
 	alteraJumbo(txt);
+}
+
+var numpadValue = 0;
+var numpadModifier = 10;
+function insUM() {
+	var nbr = parseFloat(numpadValue).toFixed(2);
+	nbr *= numpadModifier;
+	nbr += 1;
+	
+	var txt = nbr;
+	numpadValue = nbr;
+	document.getElementById("limitor").innerHTML = txt;
+}
+function insDOIS() {
+	var nbr = parseFloat(numpadValue).toFixed(2);
+	nbr *= numpadModifier;
+	nbr += 2;
+	
+	var txt = nbr;
+	numpadValue = nbr;
+	document.getElementById("limitor").innerHTML = txt;
+}
+
+function insTRES() {
+	var nbr = parseFloat(numpadValue).toFixed(2);
+	nbr *= numpadModifier;
+	nbr += 3;
+	
+	var txt = nbr;
+	numpadValue = nbr;
+	document.getElementById("limitor").innerHTML = txt;
+}
+
+function insQUAT() {
+	var nbr = parseFloat(numpadValue).toFixed(2);
+	nbr *= numpadModifier;
+	nbr += 4;
+	
+	var txt = nbr;
+	numpadValue = nbr;
+	document.getElementById("limitor").innerHTML = txt;
+}
+
+function insCINC() {
+	var nbr = parseFloat(numpadValue).toFixed(2);
+	nbr *= numpadModifier;
+	nbr += 5;
+	
+	var txt = nbr;
+	numpadValue = nbr;
+	document.getElementById("limitor").innerHTML = txt;
+}
+
+function insSEIS() {
+	var nbr = parseFloat(numpadValue).toFixed(2);
+	nbr *= numpadModifier;
+	nbr += 6;
+	
+	var txt = nbr;
+	numpadValue = nbr;
+	document.getElementById("limitor").innerHTML = txt;
+}
+
+function insSETE() {
+	var nbr = parseFloat(numpadValue).toFixed(2);
+	nbr *= numpadModifier;
+	nbr += 7;
+	
+	var txt = nbr;
+	numpadValue = nbr;
+	document.getElementById("limitor").innerHTML = txt;
+}
+
+function insOITO() {
+	var nbr = parseFloat(numpadValue).toFixed(2);
+	nbr *= numpadModifier;
+	nbr += 8;
+	
+	var txt = nbr;
+	numpadValue = nbr;
+	document.getElementById("limitor").innerHTML = txt;
+}
+
+function insNOVE() {
+	var nbr = parseFloat(numpadValue).toFixed(2);
+	nbr *= numpadModifier;
+	nbr += 9;
+	
+	var txt = nbr;
+	numpadValue = nbr;
+	document.getElementById("limitor").innerHTML = txt;
+}
+
+function insLIPA() {
+	var nbr = parseFloat(numpadValue).toFixed(2);
+	nbr *= 0;
+	var txt = nbr;
+	numpadValue = nbr;
+	document.getElementById("limitor").innerHTML = txt;
+}
+
+function insZERO() {
+	var nbr = parseFloat(numpadValue).toFixed(2);
+	nbr *= numpadModifier;
+	nbr += 0;
+	
+	var txt = nbr;
+	numpadValue = nbr;
+	document.getElementById("limitor").innerHTML = txt;
+}
+
+function insBACK() {
+	var nbr = parseInt(numpadValue);
+	nbr *= 0.1;
+	
+	nbr.toFixed(0);
+	
+	var txt = parseInt(nbr);
+	numpadValue = nbr;
+	document.getElementById("limitor").innerHTML = txt;
+}
+
+
+//<a data-original-title="A Title" href="#" class="btn btn-lg btn-danger" data-toggle="popover" title="" data-content="And here's some amazing content. It's very engaging. right?" role="button">Click to toggle popover</a>
+var numpadPresn = false;
+function toggleNumber() {
+	if (numpadPresn) {
+		numpadPresn = false;
+		document.getElementById("numpad").setAttribute("class", "col-md-3 panel-right collapse");
+	} else {
+		numpadPresn = true;
+		numpadValue = 0;
+		numpadModifier = 10;
+		document.getElementById("limitor").setAttribute("class", "active");
+		document.getElementById("numpad").setAttribute("class", "col-md-3 panel-right");
+	}
+		
+	//confirm("teste;")
 }
 
 ///////
