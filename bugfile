@@ -1,0 +1,20 @@
+*meter um possivel limitador na conta do user
+*fazer com q funcione como limitador
+
+*BUG:  se eu cancelar um pedido, o SB vai receber a notificaçao na mesma
+*BUG: limitor
+
+*substituir img dos WC, e dos SI
+*meter detail no WC
+/uhh---modolizar tudo  modulizar?
+
+*mudar 'historico consumo'
+
+/Poder acrescentar à SB, quando vai tocar uma musica da lista
+/Poder acrescentar à SB, quando entra numa fila de espera
+*meter icons nos botoes do menu inicial
+
+/meter draggable listas
+/meter o botao hide/show SB lateralmente na vertical next do jumbotron
+
+BUG: dependendo da resoluçao do monitor, pode acontecer os 'closes' ficarem deformatados

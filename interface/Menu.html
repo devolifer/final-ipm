@@ -34,50 +34,41 @@
 	<body >
 
 		<div align="center" class="container">
-			<nav style="color:#990000;" class="navbar navbar-default nav-tabs-justified col-md-12" role="navigation">
+			<nav style="color:#990000;" class="navbar navbar-default nav-tabs-justified col-md-12">
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<ul id="topo" class="nav navbar-nav navbar-btn">
 					<li class="active">
 						<a style="border-style:groove" onclick='menuMenu()'>Menu</a>
 					</li>
 				</ul>
-				<a class="nav navbar-nav navbar-right col-md-2 btn-danger navbar-btn btn-lg" style="border-style:groove; text-decoration: none;" href="../index.html">Sair</a>
+				<a class="nav navbar-nav navbar-right col-md-3 btn-danger navbar-btn btn-lg" style="border-style:groove; text-decoration: none;" href="../index.html">Sair</a>
 			</nav>
 
-			<div class="row row-offcanvas row-offcanvas-right">
+			<p class="pull-right visible-xs">
+				<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">
+					Algo correu mal...
+				</button>
+			</p>
+			<div id="jumbo" class="jumbotron col-md-9" >
+				<div align="center"  class="list-group">
+					<a onclick="menuConsumo()" class="list-group-item"><img src="../img/fast-food-icon.png">Consumir</a>
+					<a onclick="menuMapa()" class="list-group-item"><img src="../img/Maps-icon.png">Mapa do bar</a>
+					<a onclick="menuMusica()" class="list-group-item"><img src="../img/turnable-icon.png">Música</a>
+					<a onclick="menuUser()" class="list-group-item"><img src="../img/shopping-cart-icon.png">Carrinho de compras</a>
+				</div>
+			</div>
 
-				<div class="col-xs-9 col-sm-9 col-md-9">
-					<p class="pull-right visible-xs">
-						<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">
-							Algo correu mal...
-						</button>
-					</p>
-					<div id="jumbo" class="jumbotron" >
-						<div align="center"  class="list-group">
-							<a onclick="menuConsumo()" class="list-group-item">Consumir</a>
-							<a onclick="menuMapa()" class="list-group-item">Lugares</a>
-							<a onclick="menuMusica()" class="list-group-item">Música</a>
-							<a onclick="menuUser()" class="list-group-item">Histórico do consumo</a>
-						</div>
-					</div>
-				</div><!--/span-->
-
-				<div class="col-xs-3 col-sm-3 col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
-					<button onmousedown="toggleBotao()" type="button" class="btn collapse in btn-md" id="botaoNOTBAR" >
-						»» mostrar notificações »»
-					</button>
-					<div class="list-group collapse" id="esconde">
-						<a href="#" id="mplayer" class="list-group-item hide"><img src="../img/glyphicons_017_music.png"> Está a tocar: <i>Musica0</i>
-						<button onclick="ativaMplayer()" type="button" class="close" aria-hidden="true">
-							&times;
-						</button></a>
-						<a href="#" id="bebida" class="list-group-item hide">2x Imperiais</a>
-						<a href="#" id="fila" class="list-group-item hide">2x pessoas à frente
-						<br />
-						para: <i>bilhar</i></a>
-					</div>
-				</div><!--/span-->
-			</div><!--/row-->
+			<div class="col-md-3 sidebar-offcanvas" id="sidebar">
+				<button onmousedown="toggleBotao()" type="button" class="btn collapse in btn-md" id="botaoNOTBAR" >
+					«« esconde notificações ««
+				</button>
+				<div class="list-group collapse in" id="esconde">
+					<a href="#" id="mplayer" class="list-group-item hide"><img src="../img/glyphicons_017_music.png"> Está a tocar: <i>Musica0</i>
+					<button onclick="ativaMplayer()" type="button" class="close" aria-hidden="true">
+						&times;
+					</button></a>
+				</div>
+			</div><!--/span-->
 
 		</div><!--/.container-->
 
@@ -88,8 +79,6 @@
 		<!-- own script
 		================================================== -->
 		<script src="../js/fetchCode.js"></script>
-
-		<script src="../js/backupCode.js"></script>
 
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="../js/jquery-1.js"></script>
